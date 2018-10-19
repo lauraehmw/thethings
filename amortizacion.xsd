@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns="http://credito.com" targetNamespace="http://credito.com" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="solicitud">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="interes" type="xs:double"/>
+				<xs:element name="monto" type="xs:double"/>
+				<xs:element name="meses" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tablaAmortizacion">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="pagoMensual" type="xs:double"/>
+				<xs:element name="interes" type="xs:double"/>
+				<xs:element name="amortizacion">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="numPago" type="xs:int"/>
+							<xs:element name="pagosMensuales" type="xs:double"/>
+							<xs:element name="interesPago" type="xs:double"/>
+							<xs:element name="principal" type="xs:double"/>
+							<xs:element name="balance" type="xs:double"/>
+							<xs:element name="interesesTotales" type="xs:double"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://credito.com" targetNamespace="http://credito.com">
+	<wsdl:types>
+		<xs:schema targetNamespace="http://credito.com" elementFormDefault="qualified">
+			<xs:include schemaLocation="amortizacion.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="crearTablaAmortizacionMessageRequest">
+		<wsdl:part name="parameter" element="tns:solicitud"/>
+	</wsdl:message>
+	<wsdl:message name="crearTablaAmortizacionMessageResponse">
+		<wsdl:part name="parameter" element="tns:tablaAmortizacion"/>
+	</wsdl:message>
+	<wsdl:portType name="crearTablaAmortizacionPortType">
+		<wsdl:operation name="crearTablaAmortizacionOperation">
+			<wsdl:input message="tns:crearTablaAmortizacionMessageRequest"/>
+			<wsdl:output message="tns:crearTablaAmortizacionMessageResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="crearTablaAmortizacionBinding" type="tns:crearTablaAmortizacionPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="crearTablaAmortizacionOperation">
+			<soap:operation soapAction="urn:TablaAmortizacion"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="crearTablaAmortizacion">
+		<wsdl:port name="crearTablaAmortizacionPort" binding="tns:crearTablaAmortizacionBinding">
+			<soap:address location="http://localhost:8089/axis2/services/crearTablaAmortizacion"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
