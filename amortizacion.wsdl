@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://credito.com" targetNamespace="http://credito.com">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://itq.edu/soa/amortizacion" targetNamespace="http://itq.edu/soa/amortizacion">
 	<wsdl:types>
-		<xs:schema targetNamespace="http://credito.com" elementFormDefault="qualified">
+		<xs:schema targetNamespace="http://itq.edu/soa/amortizacion" elementFormDefault="qualified">
 			<xs:include schemaLocation="amortizacion.xsd"/>
 		</xs:schema>
 	</wsdl:types>
 	<wsdl:message name="crearTablaAmortizacionMessageRequest">
-		<wsdl:part name="parameter" element="tns:solicitud"/>
+		<wsdl:part name="parameter" element="tns:tablaAmortizacionRequest"/>
 	</wsdl:message>
 	<wsdl:message name="crearTablaAmortizacionMessageResponse">
-		<wsdl:part name="parameter" element="tns:tablaAmortizacion"/>
+		<wsdl:part name="parameter" element="tns:tablaAmortizacionResponse"/>
 	</wsdl:message>
 	<wsdl:portType name="crearTablaAmortizacionPortType">
 		<wsdl:operation name="crearTablaAmortizacionOperation">

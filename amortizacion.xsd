@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns="http://credito.com" targetNamespace="http://credito.com" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:element name="solicitud">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns="http://itq.edu/soa/amortizacion" targetNamespace="http://itq.edu/soa/amortizacion" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="tablaAmortizacionRequest">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="interes" type="xs:double"/>
@@ -9,7 +9,7 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="tablaAmortizacion">
+	<xs:element name="tablaAmortizacionResponse">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="pagoMensual" type="xs:double"/>
