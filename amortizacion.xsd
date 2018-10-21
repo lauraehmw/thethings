@@ -3,6 +3,9 @@
 	<xs:element name="tablaAmortizacionRequest">
 		<xs:complexType>
 			<xs:sequence>
+				<xs:element name="nombres" type="xs:string"/>
+				<xs:element name="apellidoPaterno" type="xs:string"/>
+				<xs:element name="apellidoMaterno" type="xs:string"/>
 				<xs:element name="interes" type="xs:double"/>
 				<xs:element name="monto" type="xs:double"/>
 				<xs:element name="meses" type="xs:int"/>
@@ -12,6 +15,9 @@
 	<xs:element name="tablaAmortizacionResponse">
 		<xs:complexType>
 			<xs:sequence>
+				<xs:element name="nombres" type="xs:string"/>
+				<xs:element name="apellidoPaterno" type="xs:string"/>
+				<xs:element name="apellidoMaterno" type="xs:string"/>
 				<xs:element name="pagoMensual" type="xs:double"/>
 				<xs:element name="interes" type="xs:double"/>
 				<xs:element name="amortizacion">
