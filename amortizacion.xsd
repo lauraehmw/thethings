@@ -6,6 +6,7 @@
 				<xs:element name="nombres" type="xs:string"/>
 				<xs:element name="apellidoPaterno" type="xs:string"/>
 				<xs:element name="apellidoMaterno" type="xs:string"/>
+				<xs:element name="email" type="ns:email"/>
 				<xs:element name="interes" type="xs:double"/>
 				<xs:element name="monto" type="xs:double"/>
 				<xs:element name="meses" type="xs:int"/>
@@ -18,21 +19,33 @@
 				<xs:element name="nombres" type="xs:string"/>
 				<xs:element name="apellidoPaterno" type="xs:string"/>
 				<xs:element name="apellidoMaterno" type="xs:string"/>
+				<xs:element name="email" type="ns:email"/>
 				<xs:element name="pagoMensual" type="xs:double"/>
 				<xs:element name="interes" type="xs:double"/>
-				<xs:element name="amortizacion">
+				<xs:element name="tablaAmortizacion">
 					<xs:complexType>
 						<xs:sequence maxOccurs="unbounded">
-							<xs:element name="numPago" type="xs:int"/>
-							<xs:element name="pagosMensuales" type="xs:double"/>
-							<xs:element name="interesPago" type="xs:double"/>
-							<xs:element name="principal" type="xs:double"/>
-							<xs:element name="balance" type="xs:double"/>
-							<xs:element name="interesesTotales" type="xs:double"/>
+							<xs:element name="amortizacion">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="numPago" type="xs:int"/>
+										<xs:element name="pagosMensuales" type="xs:double"/>
+										<xs:element name="interesPago" type="xs:double"/>
+										<xs:element name="principal" type="xs:double"/>
+										<xs:element name="balance" type="xs:double"/>
+										<xs:element name="interesesTotales" type="xs:double"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+	<xs:simpleType name="email">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[^@]+@[^\.]+\..+"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
